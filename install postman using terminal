@@ -1,0 +1,31 @@
+1. Go to the Postman app download page at https://www.getpostman.com/apps. You can choose the os version from the drop-down. x64 for 64 bit Operating System and x84 for the 32 bit based Linux
+
+2. Open the terminal and go to the directory where you have downloaded the tar file. If you have downloaded on the Downloads folder
+
+	cd ~/Downloads/
+
+3. Run the following commands,
+   
+	sudo rm -rf /opt/Postman/
+	
+	Extract the compressed file with the command below or use gui option
+	sudo tar xvf Postman-<your version>.tar.gz -C /opt/
+	sudo ln -sf /opt/Postman/app/Postman /usr/bin/postman
+
+
+4. create a file for the desktop entry so you can easily search the Postman app like any other app in your computer.
+   
+	nano ~/.local/share/applications/postman.desktop
+
+
+5. Write the following in the file.
+
+	[Desktop Entry]
+	Encoding=UTF-8
+	Name=Postman
+	X-GNOME-FullName=Postman API Client
+	Exec=/usr/bin/postman
+	Icon=/opt/Postman/app/resources/app/assets/icon.png
+	Terminal=false
+	Type=Application
+	Categories=Development;
